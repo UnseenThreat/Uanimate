@@ -54,9 +54,7 @@ def capture():
 				fear  += results['Fear']
 			if('Surprise' in results):
 				surprise += results['Surprise']
-			if('Neutral' in results):
-				neutral  += results['Neutral']
-			total    += (happy + sad + angry + fear + surprise + neutral)
+			total    += (happy + sad + angry + fear + surprise)
 
 			os.rename("/home/lx_user/Documents/programming/web/uanimate/"+str(foo)+"cropped"+str(c_id)+".jpg", "/home/lx_user/Documents/programming/web/uanimate/test/"+str(foo)+"cropped"+str(c_id)+".jpg")
 			c_id+=1
@@ -64,7 +62,7 @@ def capture():
 		#open the file for reading:
 		file = open('/home/lx_user/Documents/programming/web/uanimate/results.txt','w')
 		#convert to string:
-		file.write(str(happy)+" "+str(sad)+" "+str(angry)+" "+str(fear)+" "+str(surprise)+" "+str(neutral)+" "+str(total))
+		file.write(str(happy)+" "+str(sad)+" "+str(angry)+" "+str(fear)+" "+str(surprise)+" "+str(total))
 		file.close()
 		foo+=1
 	except (RuntimeError, TypeError, NameError, ValueError, IndexError, IOError, KeyError):

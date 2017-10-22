@@ -52,11 +52,11 @@ function readTextFile(){
 	            	var barFear = document.getElementById("barFear");
 	            	var barSurprise = document.getElementById("barSurprise");
 
-	            	barHappy.style.height = (parseFloat(s[0])/parseFloat(s[5]))+"%";
-	            	barSad.style.height = (parseFloat(s[1])/parseFloat(s[5]))+"%";
-	            	barAngry.style.height = (parseFloat(s[2])/parseFloat(s[5]))+"%";
-	            	barFear.style.height = (parseFloat(s[3])/parseFloat(s[5]))+"%";
-	            	barSurprise.style.height = (parseFloat(s[4])/parseFloat(s[5]))+"%";
+	            	barHappy.style.height = ((parseFloat(s[0])/parseFloat(s[5]))*100.0)+"%";
+	            	barSad.style.height = ((parseFloat(s[1])/parseFloat(s[5]))*100.0)+"%";
+	            	barAngry.style.height = ((parseFloat(s[2])/parseFloat(s[5]))*100.0)+"%";
+	            	barFear.style.height = ((parseFloat(s[3])/parseFloat(s[5]))*100.0)+"%";
+	            	barSurprise.style.height = ((parseFloat(s[4])/parseFloat(s[5]))*100.0)+"%";
 	            }
 	        }
 	    }
