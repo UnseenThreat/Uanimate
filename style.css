@@ -1,0 +1,42 @@
+#button{
+	height: 50%;
+	width: 10%;
+	min-width: 30px;
+	min-height: 40px;
+	background-color: rgba(30,235,30);
+	border-radius: 25px;
+	float: center;
+	text-align: center;
+	padding-top: 24px;
+	padding-right: 10px;
+	padding-left: 10px;
+	display: inline-block;
+	margin-top: 500px;
+	position: relative;
+	color: rgba(0,0,0);
+}
+#title{
+	color: #000000;
+	text-align: center;
+	margin: 30px;
+	font-size: 200%;
+}
+#focus{
+	margin:0px;
+	/*overflow-y:hidden;*/
+}
+#board{
+	text-align: center;
+	height: 80%;
+	min-height: 980px;
+	background-attachment: fixed;
+	background-image: url("concert_crowd-wallpaper-1680x1050.jpg");
+}
+#footer{
+	min-height:20px;
+	font-family:arial;
+	padding: 15px;
+	text-align: center;
+	color: #9999AA;
+	background-color:#000011;
+}
