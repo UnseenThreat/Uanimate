@@ -3,7 +3,7 @@ function onHoverButton(button){
 	var darkness = 235;
 	var fontColor = 0;
 	function darken(){
-		button.style.backgroundColor = "rgba(30,"+darkness+",30)";
+		button.style.backgroundColor = "rgba(30,"+darkness+",30,1)";
 		button.style.color = "rgb("+fontColor+", "+fontColor+", "+fontColor+")";
 		if(darkness == 0)
 			clearInterval(animation);
@@ -17,7 +17,7 @@ function onOverButton(button){
 	var darkness = 0;
 	var fontColor = 255;
 	function darken(){
-		button.style.backgroundColor = "rgba(30,"+darkness+",30)";
+		button.style.backgroundColor = "rgba(30,"+darkness+",30,1)";
 		button.style.color = "rgb("+fontColor+", "+fontColor+", "+fontColor+")";
 		if(darkness == 235)
 			clearInterval(animation);
