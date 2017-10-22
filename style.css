@@ -42,3 +42,241 @@
 	color: #9999AA;
 	background-color:#000011;
 }
+#demoBoard{
+	min-height: 300px;
+	height: 30%;
+	background-color: #FFFFFF;
+	background-repeat: no-repeat;
+	z-index: -1;
+}
+div.emoji{
+	padding-left:150px;
+	position: relative;
+	-webkit-column-count: 5; /* Chrome, Safari, Opera */
+    -moz-column-count: 5; /* Firefox */
+    column-count: 5;
+    -webkit-column-gap: 10%; /* Chrome, Safari, Opera */
+    -moz-column-gap: 10%; /* Firefox */
+    column-gap: 10%;
+    -webkit-column-rule-style: solid; /* Chrome, Safari, Opera */
+    -moz-column-rule-style: solid; /* Firefox */
+    -webkit-column-rule-width: 1px; /* Chrome, Safari, Opera */
+    -moz-column-rule-width: 1px; /* Firefox */
+    -webkit-column-rule-color: white; /* Chrome, Safari, Opera */
+    -moz-column-rule-color: white; /* Firefox */
+    column-rule-color: white;
+    column-rule-width: 1px;						/*get rid of width when done debugging*/
+    column-rule-style: solid;
+    z-index: 1;
+    text-align: center;
+    width: 85%;
+}
+#happy{
+	z-index: 1;
+	background-size: 80%;
+	min-height: 200px;
+	background-image:url("happy.png");
+	background-repeat: no-repeat;
+	margin-left:30px;
+	margin-right:0px;
+	padding-bottom:30px;
+	margin-bottom:30px;
+	float: center;
+}
+#sad{
+	z-index: 1;
+	background-size: 80%;
+	min-height: 200px;
+	background-image:url("sad.png");
+	background-repeat: no-repeat;
+	margin-left:30px;
+	margin-right:0px;
+	padding-bottom:30px;
+	margin-bottom:30px;
+	float: center;
+}
+#angry{
+	z-index: 1;
+	background-size: 80%;
+	min-height: 200px;
+	background-image:url("angry.png");
+	background-repeat: no-repeat;
+	margin-left:30px;
+	margin-right:0px;
+	padding-bottom:30px;
+	margin-bottom:30px;
+	float: center;
+}
+#fear{
+	z-index: 1;
+	background-size: 80%;
+	min-height: 200px;
+	background-image:url("puke.png");
+	background-repeat: no-repeat;
+	margin-left:30px;
+	margin-right:0px;
+	padding-bottom:30px;
+	margin-bottom:30px;
+	float: center;
+}
+#surprise{
+	z-index: 1;
+	background-size: 80%;
+	min-height: 200px;
+	background-image:url("surprised.png");
+	background-repeat: no-repeat;
+	margin-left:30px;
+	margin-right:0px;
+	padding-bottom:30px;
+	margin-bottom:30px;
+	float: center;
+}
+body.preload{
+	background-image:url("puke.png");
+	background-image:url("surprised.png");
+	background-image:url("angry.png");
+	background-image:url("sad.png");
+	background-image:url("happy.png");
+	max-height:0px;
+	background-size:0px;
+}
+
+
+
+
+
+.bar-graph {
+  padding-top: 16%;
+  width: 90%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 425px;
+  margin: 0;
+}
+
+.bar-graph li {
+  display: block;
+  padding: 1.5625rem 0;
+  position: relative;
+  text-align: center;
+  vertical-align: bottom;
+  border-radius: 4px 4px 0 0;
+  max-width: 20%;
+  height: 112%;
+  margin: 0 2.1% 0 0;
+  -webkit-flex: 1 1 15%;
+      -ms-flex: 1 1 15%;
+          flex: 1 1 15%;
+}
+
+.bar-graph .bar-graph-axis {
+  -webkit-flex: 1 1 8%;
+      -ms-flex: 1 1 8%;
+          flex: 1 1 8%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bar-graph .bar-graph-label {
+  margin: 0;
+  background-color: none;
+  color: #8a8a8a;
+  position: relative;
+}
+
+@media print, screen and (min-width: 40em) {
+  .bar-graph .bar-graph-label:before, .bar-graph .bar-graph-label:after {
+    content: "";
+    position: absolute;
+    border-bottom: 1px dashed #8a8a8a;
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 20%;
+  }
+}
+
+@media print, screen and (min-width: 40em) and (min-width: 64em) {
+  .bar-graph .bar-graph-label:before, .bar-graph .bar-graph-label:after {
+    width: 30%;
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  .bar-graph .bar-graph-label:after {
+    left: auto;
+    right: 0;
+  }
+}
+
+.bar-graph .percent {
+  letter-spacing: -3px;
+  opacity: 0.4;
+  width: 100%;
+  font-size: 1.875rem;
+  position: absolute;
+}
+
+@media print, screen and (min-width: 40em) {
+  .bar-graph .percent {
+    font-size: 3.875rem;
+  }
+}
+
+.bar-graph .percent span {
+  font-size: 1.875rem;
+}
+
+.bar-graph .description {
+  font-weight: 800;
+  opacity: 0.5;
+  text-transform: uppercase;
+  width: 100%;
+  font-size: 14px;
+  bottom: 20px;
+  position: absolute;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.bar-graph #barHappy {
+  border: 1px solid #1779ba;
+  background: linear-gradient(#2196e3, #1779ba 70%);
+  height: 0%;
+}
+
+.bar-graph #barSad {
+  border: 1px solid #767676;
+  background: linear-gradient(#909090, #767676 70%);
+  height: 0%;
+}
+
+.bar-graph #barAngry {
+  border: 1px solid #3adb76;
+  background: linear-gradient(#65e394, #3adb76 70%);
+  height: 0%;
+}
+
+.bar-graph #barFear {
+  border: 1px solid #ffae00;
+  background: linear-gradient(#ffbe33, #ffae00 70%);
+  height: 0%;
+}
+
+.bar-graph #barSurprise {
+  border: 1px solid #cc4b37;
+  background: linear-gradient(#d67060, #cc4b37 70%);
+  height: 0%;
+}
+

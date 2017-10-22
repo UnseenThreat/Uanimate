@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>uanimate</title>
+		<link type="text/css" rel="stylesheet" href="style.css"></link>
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+	<body id="focus" class="preload" onload="readTextFile()">
+		<div id="title">
+			<h1 style="font-family:arial; color:#35E035; display:inline">
+				U
+			</h1>
+			<h1 style="font-family:arial; display:inline">
+				&nbsp&nbspa&nbspn&nbspi&nbspm&nbspa&nbspt&nbspe
+			</h1>
+		</div>
+		<div id="demoBoard">
+			<ul class="bar-graph">
+			  <li class="bar-graph-axis">
+			    <div class="bar-graph-label">100%</div>
+			    <div class="bar-graph-label">80%</div>
+			    <div class="bar-graph-label">60%</div>
+			    <div class="bar-graph-label">40%</div>
+			    <div class="bar-graph-label">20%</div>
+			    <div class="bar-graph-label">0%</div>
+			  </li>
+			  <li id="barHappy" title="">
+			    <div class="percent"><span></span></div>
+			    <div class="description"></div>
+			  </li>
+			  <li id="barSad" title="">
+			    <div class="percent"><span></span></div>
+			    <div class="description"></div>
+			  </li>
+			  <li id="barAngry" title="">
+			    <div class="percent"><span></span></div>
+			    <div class="description"></div>
+			  </li>
+			  <li id="barFear" title="">
+			    <div class="percent"><span></span></div>
+			    <div class="description"></div>
+			  </li>
+			  <li id="barSurprise" title="">
+			    <div class="percent"><span></span></div>
+			    <div class="description"></div>
+			  </li>
+			</ul>
+
+		</div>
+		<div class = "emoji">
+			<div id = "happy"></div>
+			<div id = "sad"></div>
+			<div id = "angry"></div>
+			<div id = "fear"></div>
+			<div id = "surprise"></div>
+		</div>
+		<div id="footer">
+			Copyright 2017 Team Uanimate
+		</div>
+	</body>
+</html>

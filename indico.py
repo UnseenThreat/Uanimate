@@ -6,7 +6,7 @@ import os
 import re
 
 pygame.camera.init()
-cam = pygame.camera.Camera("/dev/video0",(720,480))
+cam = pygame.camera.Camera("/dev/video0",(1280,720))
 cam.start()
 foo = 0
 indicoio.config.api_key = "73367ede6573be5444c62bc56a4beaf1"
@@ -42,7 +42,7 @@ def capture():
 
 			# code for the emotion
 			results=indicoio.fer(str(foo)+"cropped"+str(c_id)+".jpg")
-			print(results)
+			# print(results)
 
 			if('Happy' in results):
 				happy += results['Happy']
@@ -62,9 +62,9 @@ def capture():
 			c_id+=1
 		
 		#open the file for reading:
-		file = open('/home/lx_user/Documents/programming/web/uanimate/results.txt','a')
+		file = open('/home/lx_user/Documents/programming/web/uanimate/results.txt','w')
 		#convert to string:
-		file.write(str(happy)+" "+str(sad)+" "+str(angry)+" "+str(fear)+" "+str(surprise)+" "+str(neutral)+" "+str(total)+"\n")
+		file.write(str(happy)+" "+str(sad)+" "+str(angry)+" "+str(fear)+" "+str(surprise)+" "+str(neutral)+" "+str(total))
 		file.close()
 		foo+=1
 	except (RuntimeError, TypeError, NameError, ValueError, IndexError, IOError, KeyError):
