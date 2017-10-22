@@ -3,9 +3,10 @@ import pygame.camera
 import time
 import indicoio
 import os
+import re
 
 pygame.camera.init()
-cam = pygame.camera.Camera("/dev/video0",(1920,1080))
+cam = pygame.camera.Camera("/dev/video0",(720,480))
 cam.start()
 foo = 0
 indicoio.config.api_key = "73367ede6573be5444c62bc56a4beaf1"
@@ -22,6 +23,15 @@ def capture():
 		
 		c_id = 0
 		
+		#fear is disgust
+		happy = 0.0 
+		sad = 0.0 
+		angry = 0.0 
+		fear = 0.0 
+		surprise = 0.0 
+		neutral = 0.0
+		total = 0.0
+
 		for i in range(0,int(len(dict))):
 			if(dict[i]['bottom_right_corner'][0]-dict[i]['top_left_corner'][0] > 60000 or dict[i]['bottom_right_corner'][1]-dict[i]['top_left_corner'][1] > 60000 or dict[i]['top_left_corner'][0] > 60000 or dict[i]['top_left_corner'][1] > 60000):
 				continue;
@@ -30,14 +40,37 @@ def capture():
 			cropped = image.subsurface(crop_rect)
 			pygame.image.save(cropped, str(foo)+"cropped"+str(c_id)+".jpg")
 
+			# code for the emotion
+			results=indicoio.fer(str(foo)+"cropped"+str(c_id)+".jpg")
+			print(results)
+
+			if('Happy' in results):
+				happy += results['Happy']
+			if('Sad' in results):
+				sad   += results['Sad']
+			if('Angry' in results):
+				angry += results['Angry']
+			if('Fear' in results):
+				fear  += results['Fear']
+			if('Surprise' in results):
+				surprise += results['Surprise']
+			if('Neutral' in results):
+				neutral  += results['Neutral']
+			total    += (happy + sad + angry + fear + surprise + neutral)
+
 			os.rename("/home/lx_user/Documents/programming/web/uanimate/"+str(foo)+"cropped"+str(c_id)+".jpg", "/home/lx_user/Documents/programming/web/uanimate/test/"+str(foo)+"cropped"+str(c_id)+".jpg")
 			c_id+=1
 		
+		#open the file for reading:
+		file = open('/home/lx_user/Documents/programming/web/uanimate/results.txt','a')
+		#convert to string:
+		file.write(str(happy)+" "+str(sad)+" "+str(angry)+" "+str(fear)+" "+str(surprise)+" "+str(neutral)+" "+str(total)+"\n")
+		file.close()
 		foo+=1
-	except (RuntimeError, TypeError, NameError, ValueError, IndexError, IOError):
+	except (RuntimeError, TypeError, NameError, ValueError, IndexError, IOError, KeyError):
 		print("wtf")
 
 
-for i in range(0,40):
+for i in range(0,100):
 	time.sleep(1)
 	capture()
